@@ -1,0 +1,23 @@
+#Exercise 0
+color = "blue"
+
+#Exercise 1
+radius = diameter / 2
+area = pi * (radius ** 2)
+
+#Exercise 2
+a = [1, 2, 3]
+b = [3, 2, 1]
+q2.store_original_ids()
+c = a
+a = b
+b = c
+
+#Exercise 3a
+(5 - 3) // 2
+
+#Exercise 3b
+8 - (3 * 2) - (1 + 1)
+
+#Exercise 4
+to_smash = (alice_candies + bob_candies + carol_candies) % 3
