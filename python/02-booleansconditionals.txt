@@ -1,0 +1,48 @@
+#Exercise 1
+def sign(number):
+	if (number > 0):
+		return 1
+	elif (number == 0):
+		return 0
+	else:
+		return -1
+
+#Exercise 2
+def to_smash(total_candies):
+	if (total_candies == 1):
+		print("Splitting", total_candies, "candy")
+	else:
+		print("Splitting", total_candies, "candies")
+	return total_candies % 3
+
+#Exercise 3
+#Other combinations also work
+have_umbrella = False
+rain_level = 6.0
+have_hood = True
+is_workday = False
+
+#Exercise 4
+def concise_is_negative(number):
+	return (number < 0)
+
+#Exercise 5a
+def wants_all_toppings(ketchup, mustard, onion):
+	return ketchup and mustard and onion
+
+#Exercise 5b
+def wants_plain_hotdog(ketchup, mustard, onion):
+	return (not ketchup) and (not mustard) and (not onion)
+
+#Exercise 5c
+def exactly_one_sauce(ketchup, mustard, onion):
+	return ketchup ^ mustard
+
+#Exercise 6
+def exactly_one_topping(ketchup, mustard, onion):
+	return (ketchup and (not mustard) and (not onion)) or ((not ketchup) and mustard and (not onion)) or ((not ketchup) and (not mustard) and onion)
+
+#Exercise 7
+#This is a simple strategy that achieves a winrate between 42-43%. According to discussion on Kaggle, 43% is average for solutions of this exercise.
+def should_hit(dealer_total, player_total, player_low_aces, player_high_aces):
+	return (player_total < 15) or (player_total < 18 and (player_high_aces > 0))
