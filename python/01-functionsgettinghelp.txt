@@ -1,0 +1,9 @@
+#Exercise 1
+return round(num, 2)
+
+#Exercise 2
+round([any number], [any negative integer])
+
+#Exercise 3
+def to_smash(total_candies, friends=3):
+    return total_candies % friends
