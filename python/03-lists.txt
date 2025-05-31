@@ -1,0 +1,25 @@
+#Exercise 1
+def select_second(L):
+	if len(L) >= 2:
+		return L[1]
+	else:
+		return None
+
+#Exercise 2
+def losing_team_captain(teams):
+	return teams[-1][1]
+
+#Exercise 3
+def purple_shell(racers):
+	swap = racers[-1]
+	racers[-1] = racers[0]
+	racers[0] = swap
+
+#Exercise 4
+lengths = [3, 2, 0, 2]
+
+#Exercise 5
+def fashionably_late(arrivals, name):
+	pos = arrivals.index(name)
+	items = len(arrivals)
+	return (pos >= (items / 2)) and (pos != (items - 1))
