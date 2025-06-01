@@ -1,0 +1,39 @@
+#Exercise 1
+def has_lucky_number(nums):
+	for num in nums:
+		if num % 7 == 0:
+			return True
+	return False
+
+#Exercise 2
+def elementwise_greater_than(L, thresh):
+	results = []
+	for num in L:
+		results.append(num > thresh)
+	return results
+
+#Exercise 3
+def menu_is_boring(meals):
+	for i in range(len(meals) - 1):
+		if meals[i] == meals[i + 1]:
+			return True
+	return False
+
+#Exercise 4
+#In order to create a reasonable sample size of tests, modify play_slot_machine() to this and run it:
+i = 0
+res = 0
+while i < 1000000:
+	res += play_slot_machine()
+	res -= 1
+	i += 1
+print(res)
+#The output returns a profit of approximately 2%. A possible solution:
+def estimate_average_slot_payout(n_runs):
+	i = 0
+	payout = 0
+	while i < n_runs:
+		payout -= 1
+		payout += play_slot_machine()
+		i += 1
+	return payout / n_runs
