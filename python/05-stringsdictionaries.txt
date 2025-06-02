@@ -1,0 +1,28 @@
+#Exercises 0a to 0e
+len(a)
+len(b)
+len(c)
+len(d)
+len(e)
+
+#Exercise 1
+def is_valid_zip(zip_code):
+	return zip_code.isdigit() and len(zip_code) == 5
+
+#Exercise 2
+def word_search(doc_list, keyword):
+	indices = []
+	for i, doc in enumerate(doc_list):
+		strings = doc.split()
+		for string in strings:
+			if(keyword.lower() == string.rstrip('.,').lower()):
+				if(i not in indices):
+					indices.append(i)
+	return indices
+
+#Exercise 3
+def multi_word_search(doc_list, keywords):
+	keymap = {}
+	for keyword in keywords:
+		keymap[keyword] = word_search(doc_list, keyword)
+	return keymap
