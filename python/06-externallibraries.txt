@@ -1,0 +1,64 @@
+#Exercise 1
+def prettify_graph(graph):
+	graph.set_title("Results of 500 slot machine pulls")
+	graph.set_ylim(bottom=0)
+	graph.set_ylabel("Balance")
+
+#Exercise 2
+#Examine the dataset by adding these lines before the function:
+from learntools.python.luigi_analysis import full_dataset
+for player in full_dataset:
+	print("Racer:", player)
+#The racer without a name appears twice in different positions:
+#Racer: {'name': None, 'items': ['green shell'], 'finish': 2}
+#Racer: {'name': None, 'items': ['red shell'], 'finish': 1}
+#The error is generated due to 'None' being treated as an integer, and can be solved with:
+racer = racers[i]
+	if racer['name'] is None:
+		racer['name'] = 'None'
+
+#Exercise 3
+def blackjack_hand_greater_than(hand_1, hand_2):
+	hand_1_total = 0
+	hand_1_aces = 0
+	hand_2_total = 0
+	hand_2_aces = 0
+#Add up all the cards from the first hand
+	for card in hand_1:
+		if (card.isdigit()):
+			hand_1_total += int(card)
+		elif (card == 'J' or card == 'Q' or card == 'K'):
+			hand_1_total += 10
+		else:
+			hand_1_aces += 1
+#Add up all the cards from the second hand
+	for card in hand_2:
+		if (card.isdigit()):
+			hand_2_total += int(card)
+		elif (card == 'J' or card == 'Q' or card == 'K'):
+			hand_2_total += 10
+		else:
+			hand_2_aces += 1
+#Add up the aces for the first hand optimally: count 11 if the total of the hand is below 10, else count 1
+	i = 0
+	while i < hand_1_aces:
+		if (hand_1_total > 10):
+			hand_1_total += 1
+		else:
+			hand_1_total += 11
+		i += 1
+#Add up the aces for the second hand optimally: count 11 if the total of the hand is below 10, else count 1
+	i = 0
+	while i < hand_2_aces:
+		if (hand_2_total > 10):
+			hand_2_total += 1
+		else:
+			hand_2_total += 11
+		i += 1
+#Check for bust
+	if (hand_1_total > 21):
+		return False
+	if (hand_2_total > 21):
+		return True
+#If neither hand busts, return the difference
+	return hand_1_total > hand_2_total
